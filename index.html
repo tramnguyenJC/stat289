@@ -2,15 +2,91 @@
 <html lang="en">
  <head>
   <meta charset="utf-8"/>
-  <title charset="utf-8">Philosophy</title>
+  <title charset="utf-8">Same-sex Marriage</title>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"> </script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" rel="stylesheet"/>
   <link href="css/custom.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+
+  <style>
+a
+{
+  color: #d33682;
+  font-weight: bold
+}
+
+h1
+{
+  color: #586e75;
+  font-family: 'EB Garamond', serif;
+  font-variant: small-caps;
+}
+
+h3
+{
+  color: #586e75;
+  font-family: 'EB Garamond', serif;
+  padding-bottom: 15px;
+}
+
+h3 span
+{
+  font-variant: small-caps;
+}
+
+h3 i
+{
+  padding-right: 12px;
+}
+
+p
+{
+  font-family: 'EB Garamond', serif;
+  font-size: 15pt;
+  line-height: 1.4;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+
+.divider-thin-thick
+{
+  text-align:center;
+  width:90%;
+  max-width:700px;
+  margin:15px auto 35px auto;
+  border-top:1px solid #EEEEEE;
+  border-bottom:2px solid #EEEEEE;
+  height:5px;
+  clear:both
+}
+
+.mytext
+{
+  display: inline-block;
+  max-width: 700px;
+  text-align: left;
+  font-family: 'EB Garamond', serif;
+}
+
+.myimg
+{
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  font-family: 'EB Garamond', serif;
+}
+
+  </style>
+
  </head>
  <body>
   <nav class="navbar navbar-default navbar-darkbg-dark navbar-fixed-top">
    <div class="container">
     <div class="navbar-header">
+     <!-- PUT YOUR SHORT TITLE HERE (should match other pages) -->
      <a class="navbar-brand" href="index.html">Same-sex Marriage</a>
     </div>
     <div class="navbar-collapse collapse" id="navbar">
@@ -32,17 +108,84 @@
     </div>
    </div>
   </nav>
-  <div class="container" style="padding-top: 30px;">
-   <div class="row">
-    <div class="col-lg-4">
-     <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Plato_Silanion_Musei_Capitolini_MC1377.jpg" style="max-width: 300px"/>
+
+  <div style="text-align: center; background: #f1f1f1">
+  <div style="display: inline-block; padding-top: 90px; padding-bottom: 90px; background: white; width: 900px">
+
+    <!-- PUT YOUR LONG TITLE AND NAME HERE -->
+    <div style="max-width: 600px; display: inline-block;">
+      <h1>Exploring same-sex marriages on Wikipedia</h1>
+      <h3><i>by</i> <span>Tracy Nguyen</span></h3>
     </div>
-    <div class="col-lg-8" style="font-size: 16px; max-width:600px">
-     <h1>Same-sex marriage</h1>
-     <p>Here is some explanation of what we are doing. Here isexplanation of what we are doing. Here is some explanation of what we are doing.</p>
-     <p/>
+
+    <div class="divider-thin-thick">&nbsp;</div>
+    <div class="myimg">
+      <img src="https://i.imgur.com/f4hiCFz.jpg" style="max-width: 600px;"/>
+      <br>
     </div>
-   </div>
+    <!-- example of a text box; include as many paragraphs as needed -->
+    <div class="mytext">
+      <p>
+        Same-sex marriage was just legalized across all states of the U.S. on June 26, 2015, but it still remained a controversial topic for some conservative regions within the States, as well as in other countries. In Vietnam, for instance, even though the ban on gay marriage was lifted recently, there is still a lot of social stigma around this topic. Because there have been many recent shifts in not only social policies but also in public opinion regarding gay marriage, I just think this would be an interesting topic to investigate since these shifts might be reflected in the revisions of the Wikipedia articles’ content.
+      </p>
+
+      <p> 
+        The data is collected like so: I retrieved articles that are internal links from the page <a href="https://en.wikipedia.org/wiki/Same-sex_marriage"> Same-sex Marriage </a>, printed them out to the pages.txt file, and then manually went through the list of links to remove those that I suspect to be less relevant. For a lot of pages, especially the ones concerning marriage laws or same-sex unions in different countries, the first paragraph extracted was the list of countries that support gay marriages. This was because the XMLTree constructed from the site’s HTML code does not disregard paragraphs within a table. I tried to modify the code within wikihistory.py to address this issue, and was able to select the correct first paragraph for the revisions of the article, although still somehow unable to do so for the current version’s first paragraph (displayed underneath the title).
+      </p>
+    </div>
+    <div class="myimg">
+      <img src="https://i.imgur.com/B9Pte2S.png" style="max-width: 600px;"/>
+      <br>
+
+    </div>
+    <!-- another text box -->
+    <div class="mytext">
+      <p>
+        Most of the links are regarding same-sex marriages or unions in various countries (ex: Recognition of same-sex unions in Cambodia), while some are about the constitutions regarding gay marriages (ex: Civil Marriage Act), or more general yet still relevant topics such as <i>Artificial insemination</i> or <i>Transgender</i>. There are some interesting patterns that I found in the data. Specifically, among the Wikipedia pages with the format “Same-sex marriage in country X”, if the country in the title is a progressive nation that supports gay marriages, then such metrics as the length of the article, the number of internal links, number of languages supported, etc. tend to be greater than those of conservative countries. For instance, the article <i>Same-sex marriage in Taiwan</i> has only 764 words, 240 internal links and is translated to 8 languages —lower metrics than those of the article <i>Same-sex marriage in the United States</i>, which has 1122 words, 1002 internal links, and is supported in 12 languages. Further, articles on bigger nations (U.S., U.K., Canada, Australia, etc.) are often longer and contain more internal links than those of smaller ones (Hungary, Greece or Cyprus, etc.). I suppose this is because for progressive countries that have made many steps to support the LGBT community, there are more LGBT-related historical events or laws mentioned that increase the number of internal links. A potential confounding variable is that among the contributors for Wikipedia content, there are probably more people from first-world English-speaking countries, so probably more people add to the U.K. or U.S.’s same-sex marriage articles than to those regarding smaller countries. 
+      </p>
+      <p>
+        Investigating the changes over time in the first paragraph of articles about LGBT, I also noticed that in earlier revisions, the articles used terms such as “gay”, “homosexual” in their definition or description, and later, around 2007-2009, those terms were replaced with the word “LGBT”. For instance, the first sentence of the article <i>LGBT adoption</i> is “Gay adoption refers to the adoption of children by a homosexualcouple" in 2004, but in the most recent revision in 2018, it is  “LGBT adoption is the adoption of children by lesbian, gay, bisexual and transgender people.” The initialism LGBT is adopted by the United States in the 1990s (Carter), but I suppose that recently that term has been used more often, hence the transition to using the initialism “LGBT” as reflected in the revisions.
+      </p>
+    </div>
+    <div class="myimg">
+      <img src="https://www.americamagazine.org/sites/default/files/main_image/iStock-823931238.jpg" style="max-width: 600px;"/>
+      <br>
+          
+    </div>
+    <!-- another text box -->
+    <div class="mytext">
+
+      <p>
+        For most articles, the number of internal links for the first revision is quite low. For example, the article <i>Transgender </i>’s first revision in 2001 only has 7 internal links, or the article <i>History of same-sex unions </i> also only has 43 internal links for its first revision in 2006. I think this is because the first revision is often not as informative, and also because gay marriage is a recent development in the last few decades so there must have been not that many pages related to it when the article is first written. Interestingly, I noticed that the article <i>Homosexuality in ancient Rome </i> has 232 internal links, almost 6 times as many as History of same-sex unions, even though its current revision’s number of internal links is not proportionately as high (only 323 links). Before checking out the page’s content, I made the guess that there must be already quite a few Wikipedia pages related to Ancient Rome because it’s an older concept than same-sex marriages. Thus, there should be more phrases within the description of the article that are internal links to other Rome-related pages. In fact, the first revision of this page mentioned a few historical figures, just as I hypothesized. This article’s content is quite upsetting though — “Acceptable male partners were slaves and former slaves”, or “Roman men in general seem to have preferred youths between the ages of 12 and 20 as sexual partners”. I didn’t know that information before, but it’s super sad that young boys in ancient Rome were subjected to such sexual advances.
+      </p>
+      <p>
+        The revision histories of the article <i>Public opinion of same-sex marriage</i> in the United States
+        is also quite interesting. In particular, the first paragraph of the first revisions only describes the general argument of advocates and opponents of same-sex marriage, but later revisions starts referencing polling results to show that support for gay marriage has increased over the years., The revisions this article goes changes its description of public opinion from “mixed reactions” to “majority support” over the years, which accurately reflect the shift in social climate regarding throughout the last decade.
+      </p>
+
+      <p> 
+        The graph on the Viz tab illustrates the trends that I would expect — the number of language pages and the article’s length are generally higher when the page has more internal links. All the pages with the format “Same-sex marriage in X  country” are closely grouped together, because they have quite similar metrics for number of internal links and number of languages. Articles Marriage and LGBT rights by country or territory understandably have higher number of internal links, because the former is a very general topic and the latter concerns a lot of different countries. The relationships among articles in the same cluster are quite clear: for instance, articles about Same-sex marriage in British Territories are grouped together, articles about Same-sex marriage in South America are grouped together, etc. The cluster LGBT adoption apparently is quite isolated from the rest of the articles, as it only includes an article on LGBT adoption.
+      </p>
+
+      <p>
+        In conclusion, same-sex marriage was an interesting topic to explore, and it’s nice that all the visualizations and statistics, as well as reading the first paragraphs of different articles, helped me understand it more. 
+      </p>
+
+      <h1> References </h1>
+      <p>
+        Carter, J. (2017, October 31). What You Should Know About 'LGBTQ'. Retrieved from https://www.thegospelcoalition.org/article/what-you-should-know-about-lgbtq/
+      </p>
   </div>
+  </div>
+
+
+
  </body>
 </html>
+
+
+
+
+
+
+
